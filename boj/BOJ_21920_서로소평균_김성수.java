@@ -5,42 +5,55 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/**
- * 메모리 : 11532
- * 시간 : 76
- */
 public class BOJ_21920_서로소평균_김성수 {
     static BufferedReader br;
-    static StringBuilder sb;
     static StringTokenizer st;
+
+    static int numCnt, X;
+    static int[] numList;
+
+    // 최대 공약수 구하기(gcd)
+    // 두 수를 나눈 나머지가 0이면 val2가 val1과 val2의 최대 공약수이다.
+    // 나머지가 0이 아니라면 val2 값을 val1 값에 담아주고, val2에 val1 % val2 값을 담아준다.
+    public static int gcd(int val1, int val2) {
+        if (val2 == 0) {
+            return val1;
+        }
+        return gcd(val2, val1 % val2);
+    }
+
+    // 서로소 평균을 구하기 위함.
+    public static void calculateAndPrintAverage() {
+        double sum = 0;
+        double sumCnt = 0;
+
+        // numList에 담긴 값들을 주어진 X 값과 최대공약수를 구하여 서로소를 파악하고 sum 값과 sumCnt를 구한다.
+        for (int i = 0; i < numCnt; i++) {
+            int checkGcd = gcd(X, numList[i]);
+
+            // 최대공약수가 1이라면 서로소이다.
+            if (checkGcd == 1) {
+                sum += numList[i];
+                sumCnt++;
+            }
+        }
+
+        double average = sum / sumCnt;
+        System.out.println(average);
+    }
 
     public static void main(String[] args) throws IOException {
         br = new BufferedReader(new InputStreamReader(System.in));
-        sb = new StringBuilder();
 
-        int stairsCnt = Integer.parseInt(br.readLine().trim());
-
-        int[] stairs = new int[stairsCnt + 1];
-
-        for (int i = 1; i <= stairsCnt; i++) {
-            stairs[i] = Integer.parseInt(br.readLine().trim());
+        numCnt = Integer.parseInt(br.readLine().trim());
+        numList = new int[numCnt];
+        st = new StringTokenizer(br.readLine().trim());
+        for (int i = 0; i < numCnt; i++) {
+            numList[i] = Integer.parseInt(st.nextToken());
         }
+        X = Integer.parseInt(br.readLine().trim());
 
-        int[] dp = new int[stairsCnt + 1];
-
-        dp[1] = stairs[1];
-
-        for (int i = 2; i <= stairsCnt; i++) {
-            if(i==2){
-                dp[2] = stairs[1] + stairs[2];
-            }else if(i==3){
-                dp[3] = Math.max(stairs[1], stairs[2]) + stairs[3];
-            }else{
-                // 한칸을 움직였을 때 vs 두 칸을 움직였을 때 더 큰 값을 dp에 저장
-                dp[i] = Math.max(dp[i-3]+stairs[i-1], dp[i-2])+stairs[i];
-            }
-        }
-        // 마지막 계단은 반드시 밞아야 하므로 마지막 계단을 올랐을 때를 출력하는게 최댓값이다
-        System.out.println(dp[stairsCnt]);
+        // X와 서로소인 수의 평균을 계산하고 출력한다.
+        calculateAndPrintAverage();
     }
 }

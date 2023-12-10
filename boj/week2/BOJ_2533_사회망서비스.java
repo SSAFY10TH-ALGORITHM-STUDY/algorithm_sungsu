@@ -17,6 +17,9 @@ import java.util.StringTokenizer;
  * 1. ArrayList를 사용하여 정점과 간선을 표현한다.
  * 2. 2차원 dp 배열을 생성하고 얼리어답터일 때와 얼리어답터가 아닐 때를 구분해서 최솟값을 저장한다.
  * 3. dfs를 사용해서 자식 정점부터 탐색한다.
+ *
+ * 메모리 : 409772KB
+ * 시간 : 2152ms
  */
 public class BOJ_2533_사회망서비스 {
     static BufferedReader br;

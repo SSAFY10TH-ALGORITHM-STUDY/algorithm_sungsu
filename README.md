@@ -5,10 +5,10 @@
 |17413| [단어 뒤집기 2](https://www.acmicpc.net/problem/17413) | ✅ | | 23.12.08 | `스택` | 23644 | 264 |
 |21609| [상어 중학교](https://www.acmicpc.net/problem/21609) | ✅ |  | 23.12.08 | `구현` |16228|236|
 |1106| [호텔](https://www.acmicpc.net/problem/1106) | ✅  |   |23.12.08  | `dp` |11612 |80|
-|2533| [사회망 서비스(SNS)](https://www.acmicpc.net/problem/2533) |    |    |  |       |  | |
-|2164| [카드 2](https://www.acmicpc.net/problem/2164) |  |   |  |     |  | |
-|5052| [전화번호 목록](https://www.acmicpc.net/problem/5052) |   |      |  |        | | |
-|21275| [폰 호석만](https://www.acmicpc.net/problem/21275) |  |   |  |       | | |
+|2533| [사회망 서비스(SNS)](https://www.acmicpc.net/problem/2533) |✅|  | 23.12.10 |`dfs`,`dp`|409772 |2152|
+|2164| [카드 2](https://www.acmicpc.net/problem/2164) |✅|  | 23.12.10 |`queue`|31892|144|
+|5052| [전화번호 목록](https://www.acmicpc.net/problem/5052) |✅|  | 23.12.10 ||31048 |576|
+|21275| [폰 호석만](https://www.acmicpc.net/problem/21275) |✅|  | 23.12.10 ||13012 |92|
 |4659| [비밀번호 발음하기](https://www.acmicpc.net/problem/4659) |    |      |  |      | | |
 |1749| [점수따먹기](https://www.acmicpc.net/problem/1749) |    |       |  |        | | |
 |16719| [ZOAC](https://www.acmicpc.net/problem/16719) |    |    |  |      | | |

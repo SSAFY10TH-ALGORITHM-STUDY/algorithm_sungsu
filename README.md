@@ -5,12 +5,12 @@
 |17413| [단어 뒤집기 2](https://www.acmicpc.net/problem/17413) | ✅ | | 23.12.08 | `스택` | 23644 | 264 |
 |21609| [상어 중학교](https://www.acmicpc.net/problem/21609) | ✅ |  | 23.12.08 | `구현` |16228|236|
 |1106| [호텔](https://www.acmicpc.net/problem/1106) | ✅  |   |23.12.08  | `dp` |11612 |80|
-|2533| [사회망 서비스(SNS)](https://www.acmicpc.net/problem/2533) |✅|  | 23.12.10 |`dfs`,`dp`|409772 |2152|
-|2164| [카드 2](https://www.acmicpc.net/problem/2164) |✅|  | 23.12.10 |`queue`|31892|144|
-|5052| [전화번호 목록](https://www.acmicpc.net/problem/5052) |✅|  | 23.12.10 ||31048 |576|
-|21275| [폰 호석만](https://www.acmicpc.net/problem/21275) |✅|  | 23.12.10 ||13012 |92|
-|4659| [비밀번호 발음하기](https://www.acmicpc.net/problem/4659) |    |      |  |      | | |
-|1749| [점수따먹기](https://www.acmicpc.net/problem/1749) |    |       |  |        | | |
-|16719| [ZOAC](https://www.acmicpc.net/problem/16719) |    |    |  |      | | |
-|19637| [IF문 좀 대신 써줘](https://www.acmicpc.net/problem/19637) |    |         |  |  | | |
-|7453| [합이 0인 네 정수](https://www.acmicpc.net/problem/7453) |    |  |  |       | | |
+|2533| [사회망 서비스(SNS)](https://www.acmicpc.net/problem/2533) |✅|| 23.12.10 |`dfs`,`dp`|409772 |2152|
+|2164| [카드 2](https://www.acmicpc.net/problem/2164) |✅|`queue`| 23.12.10 |`queue`|31892|144|
+|5052| [전화번호 목록](https://www.acmicpc.net/problem/5052) |✅|`구현`| 23.12.10 ||31048 |576|
+|21275| [폰 호석만](https://www.acmicpc.net/problem/21275) |✅|`구현`| 23.12.11 ||13012 |92|
+|4659| [비밀번호 발음하기](https://www.acmicpc.net/problem/4659) |✅|`구현`| 23.12.11 ||11440 |76|
+|1749| [점수따먹기](https://www.acmicpc.net/problem/1749) |✅|`dp`| 23.12.11 ||19016 |816|
+|16719| [ZOAC](https://www.acmicpc.net/problem/16719) |✅| | 23.12.11 ||11564 |80|
+|19637| [IF문 좀 대신 써줘](https://www.acmicpc.net/problem/19637) |✅|`이분탐색`| 23.12.12 ||73100 |456|
+|7453| [합이 0인 네 정수](https://www.acmicpc.net/problem/7453)|✅|`이분탐색`, `투포인터`| 23.12.12 ||152912|3912|

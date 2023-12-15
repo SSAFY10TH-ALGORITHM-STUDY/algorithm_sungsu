@@ -7,6 +7,12 @@ import java.util.HashSet;
 import java.util.StringTokenizer;
 
 /**
+ * * 문제 해결 방법
+ * 1. 이전 문자와 현재 문자가 다를 때를 비교한다.
+ * 2. 만약 다르다면 이전 값들을 저장해놓은 HashSet에서 현재 문자가 존재하는지 파악한다.
+ * 3. 만약 존재한다면 return false
+ * 4. solution 함수가 return true를 반환한다면 해당 갑은 그룹 단어이므로 answer를 +1 해준다.
+ *
  * 메모리 : 11656
  * 시간 : 80
  */

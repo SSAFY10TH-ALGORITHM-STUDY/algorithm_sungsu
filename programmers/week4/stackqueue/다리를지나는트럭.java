@@ -56,10 +56,18 @@ public class 다리를지나는트럭 {
             que.offer(0);
         }
 
+        // 마지막 트럭을 담을 때까지 반복
         while(idx < truckWeights.length){
+            // 트럭이 다리에서 빠져나온다
             int value = que.poll();
+            // 다리 위에 있는 트럭의 무게가 빠져나온 트럭 무게 만큼 줄어든다.
             curWeight -= value;
+            // 시간초가 증가한다.
             answer++;
+            // 다음 트럭이 다리로 이동할 수 있는지 파악한다.
+            // 만약 다음 트럭이 다리로 이동했을 때 weight를 넘어선다면 들어올 수 없으므로 대신해서 '0'을 que에 넣는다.
+            // 반대로 다음 트럭이 들어와도 weight를 넘지 않는다면 트럭이 들어오고 다리 위에 있는 트럭 무게를 그만큼 증가시켜준다.
+            // 다음 트럭이 들어왔으므로 idx를 증가시켜준다.
             if(curWeight + truckWeights[idx] <= weight){
                 que.offer(truckWeights[idx]);
                 curWeight += truckWeights[idx++];

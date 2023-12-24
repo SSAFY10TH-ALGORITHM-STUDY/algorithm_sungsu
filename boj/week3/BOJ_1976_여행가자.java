@@ -38,21 +38,25 @@ public class BOJ_1976_여행가자 {
 
         rootList = new int[cityCnt+1];
 
+        // 모든 노드가 자신을 가리키도록.. 현재 union & find를 하지 않은 상태.
         for (int i = 1; i <= cityCnt; i++) {
             rootList[i] = i;
         }
 
+        // 인접행렬을 입력받는다.
         for (int i = 1; i <= cityCnt; i++) {
             st = new StringTokenizer(br.readLine().trim());
             for (int j = 1; j <= cityCnt; j++) {
                 int value = Integer.parseInt(st.nextToken());
 
+                // 연결되어 있을 때 union 실행
                 if(value == 1) union(i,j);
             }
         }
 
         st = new StringTokenizer(br.readLine().trim());
 
+        // 첫번째로 입력 받은 값이 root이다.
         int root = find(Integer.parseInt(st.nextToken()));
 
         boolean flag = false;
@@ -60,20 +64,25 @@ public class BOJ_1976_여행가자 {
         for (int i = 0; i < edgeCnt-1; i++) {
             int value = Integer.parseInt(st.nextToken());
 
+            // root 노드가 아닌 노드가 하나라도 존재한다면 연결되어 있지 않은 것이므로. flag = true
             if(root != find(value)){
                 flag = true;
                 break;
             }
         }
 
+        // flag = true일 때 NO 출력
         if (flag) System.out.println("NO");
         else System.out.println("YES");
     }
 
+
+    // 루트 값이 다를 때 더 작은 루트 값으로 채워넣는다
     private static void union(int i, int j) {
         i = find(i);
         j = find(j);
 
+        // 부모노드를 담아주는 과정
         if(i > j){
             rootList[i] = j;
         }else{
@@ -81,6 +90,8 @@ public class BOJ_1976_여행가자 {
         }
     }
 
+    // 해당 노드의 루트 노드를 찾는다.
+    // 만약 자기 자신을 가리키는 노드가 나올 경우 return i해준다.
     private static int find(int i) {
         if(i == rootList[i]) return i;
         int fi = find(rootList[i]); // 부모노드를 찾아나간다.

@@ -90,7 +90,7 @@ import java.util.PriorityQueue;
  *
  * answer = 6
  *
- * -> pq에서 주어진 location에 해당하는 값이 동일한 순서에 뽑힐 때 return 해준다.
+ * -> 알고리즘 : 배열에서 인덱스 순서와 pq에서 빠져나오는 인덱스 순서가 같을 때 정답이 된다.
  */
 public class 프로세스 {
     public static void main(String[] args) {

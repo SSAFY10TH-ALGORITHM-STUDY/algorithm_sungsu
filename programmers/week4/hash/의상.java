@@ -40,6 +40,7 @@ public class 의상 {
         }
 
         // -1을 하는 이유는 아무것도 입지 않은 경우를 제외하기 위함이다.
+
         System.out.println(answer-1);
     }
 }

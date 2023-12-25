@@ -18,7 +18,8 @@ import java.util.HashMap;
  * 6 x 2
  * 4 x 3
  *
- * 세로는 반드시 3이상부터?
+ * 세로, 가로는 반드시 3이상부터
+ * -> 그래야 중앙에 옐로 값이 존재 가능.
  *
  * 외각부터 뺴기 시작하면
  * 노란색 갯수는 = 가로 - 2  x 세로 - 2
@@ -39,6 +40,7 @@ public class 카펫 {
 
         int tmp = 3;
 
+        // width와 height 값을 찾기 위한 반복문
         while(true){
             if(sum % tmp == 0){
                 break;
@@ -58,8 +60,6 @@ public class 카펫 {
             // 외곽을 갈색으로, 중앙을 노란색으로 칠해가면서 정답인지 파악한다.
             while(tmpWidth >= 0 && tmpHeight >= 0){
                 int tmpYellow = tmpWidth * tmpHeight;
-//                System.out.println(tmpYellow);
-//                System.out.println(width*height);
                 // 중앙에 노란색 값이 yellow와 같으면서 전체 넓이에서 yellow를 뺀 값이 brown과 같다면 정답이다.
                 if(tmpYellow == yellow && width*height-tmpYellow == brown){
                     answer[0] = width;
@@ -86,7 +86,6 @@ public class 카펫 {
                 }
                 height++;
             }
-//            System.out.println(width + " " + height);
         }
 
         System.out.println(Arrays.toString(answer));

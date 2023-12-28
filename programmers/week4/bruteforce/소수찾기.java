@@ -33,7 +33,7 @@ public class 소수찾기 {
             if(num%i==0) return false;
         }
         return true;
-    }
+    } 
 
     public static void main(String[] args) {
         String numbers = "17";

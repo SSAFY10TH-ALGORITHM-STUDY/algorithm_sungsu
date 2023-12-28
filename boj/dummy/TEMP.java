@@ -3,61 +3,77 @@ package boj.dummy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class TEMP {
     static BufferedReader br;
-    static StringBuilder sb;
     static StringTokenizer st;
+    static StringBuilder sb;
+
+    static int cityCnt;
+    static int planCnt;
+
+    static int[] answerList;
 
     public static void main(String[] args) throws IOException {
         br = new BufferedReader(new InputStreamReader(System.in));
-        sb = new StringBuilder();
+        
+        cityCnt = Integer.parseInt(br.readLine().trim());
+        planCnt = Integer.parseInt(br.readLine().trim());
 
-        int T = Integer.parseInt(br.readLine().trim());
+        answerList = new int[planCnt+1];
 
-        for (int i = 0; i < T; i++) {
-            int sequenceSize = Integer.parseInt(br.readLine().trim());
+        for (int i = 1; i <= cityCnt; i++) {
+            answerList[i] = i;
+        }
 
-            PriorityQueue<Integer> maxPQ = new PriorityQueue<>();
-            PriorityQueue<Integer> minPQ = new PriorityQueue<>(Collections.reverseOrder());
-
-            sb.append(sequenceSize/2+1+"\n");
-
-            int cnt = 0;
-
-            for (int j = 0; j < sequenceSize; j++) {
-
-                if(j%10==0) st = new StringTokenizer(br.readLine().trim());
-
+        for (int i = 1; i <= cityCnt; i++) {
+            st = new StringTokenizer(br.readLine().trim());
+            for (int j = 1; j <= cityCnt; j++) {
                 int value = Integer.parseInt(st.nextToken());
-
-                // 1.
-                if(maxPQ.size() == minPQ.size()) maxPQ.add(value);
-                else minPQ.add(value);
-
-                // 2.
-                if(!maxPQ.isEmpty() && !minPQ.isEmpty()){
-                    if(maxPQ.peek() < minPQ.peek()){
-                        int tmp = maxPQ.poll();
-                        maxPQ.add(minPQ.poll());
-                        minPQ.add(tmp);
-                    }
-                }
-
-                // 3.
-                if(j%2==0){
-                    sb.append(maxPQ.peek() + " ");
-
-                    cnt++;
-
-                    if(cnt % 10 == 0) sb.append("\n");
+                if(value == 1){
+                    union(i,j);
                 }
             }
-            sb.append("\n");
         }
-        System.out.println(sb);
+
+        st = new StringTokenizer(br.readLine().trim());
+
+        int root = Integer.parseInt(st.nextToken());
+
+        boolean flag = false;
+
+        for (int i = 0; i < planCnt-1; i++) {
+
+            int value = Integer.parseInt(st.nextToken());
+
+            if(root != find(value)){
+                flag = true;
+                break;
+            }
+        }
+
+        // flag = true일 때 NO 출력
+        if (flag) System.out.println("NO");
+        else System.out.println("YES");
     }
+
+    private static void union(int i, int j) {
+        i = find(i);
+        j = find(j);
+
+        if(i < j){
+            answerList[j] = i;
+        }else{
+            answerList[i] = j;
+        }
+    }
+
+
+    private static int find(int i) {
+        if(answerList[i] == i) return i;
+        return find(answerList[i]);
+    }
+
+
 }

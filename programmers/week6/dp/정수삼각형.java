@@ -1,4 +1,4 @@
-package programmers.week6;
+package programmers.week6.dp;
 
 /**
  완탐으로 풀 시

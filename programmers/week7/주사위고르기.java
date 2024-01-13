@@ -1,4 +1,4 @@
-package programmers.peek7;
+package programmers.week7;
 
 /**
  A가 승리할 확률을 가장 높이기 위해 A가 골라야 하는 주사위 번호를 오름차순으로 1차원 정수 배열에

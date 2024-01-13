@@ -1,4 +1,4 @@
-package programmers.peek7;
+package programmers.week7;
 
 import java.util.*;
 
